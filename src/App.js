@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  handleErrorButtonClick = () => {
+    throw new Error(`Attempt ${this.props.attemptNb}: Error button clicked`);
+  }
   render() {
     return (
       <div className="App">
@@ -20,6 +23,10 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <div>
+          <button>good button</button>
+          <button onClick={this.handleErrorButtonClick}>error button</button>
+        </div>
       </div>
     );
   }
